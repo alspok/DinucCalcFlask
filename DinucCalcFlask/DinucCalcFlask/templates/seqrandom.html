@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h2>Random sequence</h2>
+            <br />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <form action="{{url_for('seqrandommake')}}" method="post">
+                <label>Sequence length</label><br />
+                <input type="text" name="seqlength" />
+                {% if inputError == False %}
+                    <lable style="color: red">(max 2000bp)</lable>
+                {% else %}
+                    <lable style="color: black">(max 2000bp)</lable>
+                {% endif %}
+                <br /><br />
+                <label>GC percentage</label><br />
+                <input type="text" name="gcpercentage" />
+                {% if inputError == False %}
+                    <label style="color: red">(i.e. 63)</label>
+                {% else %}
+                    <label style="color: black">(i.e. 63)</label>
+                {% endif %}
+                <br /><br />
+                <input type="submit" class="btn btn-color btn-large" value="Calculate" />
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

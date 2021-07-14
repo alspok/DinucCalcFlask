@@ -6792,6 +6792,13 @@ td.visible-print {
   display: none !important;
 }
 
+.text-area {
+    border: 1px solid #999999;
+    width: auto;
+    margin: 5px 0;
+    padding: 1%;
+}
+
 @media print {
   .visible-print {
     display: block !important;

@@ -28,6 +28,19 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="DinucCalcFlask\DinucCalculation.py" />
+    <Compile Include="DinucCalcFlask\DinucFrqTable.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DinucCalcFlask\GCCalculation.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DinucCalcFlask\RandomSeq.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DinucCalcFlask\SeqList.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="runserver.py" />
     <Compile Include="DinucCalcFlask\__init__.py" />
     <Compile Include="DinucCalcFlask\views.py" />
@@ -41,6 +54,14 @@
     <Folder Include="DinucCalcFlask\templates\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="DinucCalcFlask\templates\dinuctable.html" />
+    <Content Include="DinucCalcFlask\templates\seqfrqtable.html" />
+    <Content Include="DinucCalcFlask\templates\seqinput.html" />
+    <Content Include="DinucCalcFlask\templates\seqinputgb.html" />
+    <Content Include="DinucCalcFlask\templates\seqinputlist.html" />
+    <Content Include="DinucCalcFlask\templates\seqlistfrqtable.html" />
+    <Content Include="DinucCalcFlask\templates\seqrandom.html" />
+    <Content Include="DinucCalcFlask\templates\seqrandfrqtable.html" />
     <Content Include="requirements.txt" />
     <Content Include="DinucCalcFlask\static\content\bootstrap.css" />
     <Content Include="DinucCalcFlask\static\content\bootstrap.min.css" />

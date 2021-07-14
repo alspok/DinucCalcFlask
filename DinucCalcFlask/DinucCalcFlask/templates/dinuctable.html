@@ -1,0 +1,43 @@
+<div class="row">
+    <table>
+        <tr>
+            <th class="backgrnd" style="width: auto">Dinuc</th>
+            {% for i in range(0, dinucTableLength) %}
+            <th class="backgrnd">{{dinucFrqTables[i][0]}}</th>
+            {% endfor %}
+        </tr>
+        <tr>
+            <th class="backgrnd" style="width: auto">1st frame</th>
+            {% for i in range(0, dinucTableLength) %}
+            <td>{{dinucFrqTables[i][1]}}</td>
+            {% endfor %}
+        </tr>
+        <tr>
+            <th class="backgrnd" style="width: auto">2nd frame</th>
+            {% for i in range(0, dinucTableLength) %}
+            <td>{{dinucFrqTables[i][2]}}</td>
+            {% endfor %}
+        </tr>
+        <tr>
+            <th class="backgrnd" style="width: auto">Frq 1st frame</th>
+            {% for i in range(0, dinucTableLength) %}
+            <td>{{dinucFrqTables[i][3]}}</td>
+            {% endfor %}
+        </tr>
+        <tr>
+            <th class="backgrnd" style="width: auto">Frq 2nd frame</th>
+            {% for i in range(0, dinucTableLength) %}
+            <td>{{dinucFrqTables[i][4]}}</td>
+            {% endfor %}
+        </tr>
+        <tr>
+            <th class="backgrnd" style="width: auto">Frq diff</th>
+            {% for i in range(0, dinucTableLength) %}
+            <td>{{dinucFrqTables[i][5]}}</td>
+            {% endfor %}
+        </tr>
+    </table>
+    <br />
+    <h4>Dinuc frq diff sum: <a>{{dinucFrqDiffSum}}</a></h4>
+</div>
+</div>

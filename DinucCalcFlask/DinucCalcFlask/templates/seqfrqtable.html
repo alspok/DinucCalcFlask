@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="container box">
+    <div class="row">
+        <div class="col-md-12">
+            <h2>Dinuc frq table</h2>
+            <br />
+        </div>
+    </div>
+
+    <h3>Sequence</h3>
+    <h4>Length {{seqLength}}</h4>
+    <h4>GC percentage {{ gcCalculation }} %</h4>
+    <p style="font-size: 16px">{{printSeq}}</p>
+    <br />
+
+    {% include "dinuctable.html" %}
+    
+    {% endblock content%}

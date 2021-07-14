@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h2>Input sequence</h2>
+            <br />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <form action="{{url_for('seqtextarea')}}" method="post">
+                <textarea name="seq" cols="200" rows="10" style="max-width: 60%;">agacagatagggatagacccagattagacagaaaaaaaacgtagactagacaggagacagatagggatagacccagattagacagaaagacgcgtgctgagctggctgtgtggcgcgctctctcatctctcgagatagggatagacccagattagacagaaaaaaaacgtagactagacaggagacagatagggatagacccagattagacagaaagacagatagggatagacccagattagacagaaaaaaaacgtagactagacaggagacagatagggatagacccagattagacagaa</textarea>
+                <p></p>
+                <p><input type="submit" class="btn btn-color btn-large" value="Calculate" /></p>
+            </form> 
+        </div>
+    </div>
+    <br />
+</div>
+
+{% endblock content %}
+
+
+

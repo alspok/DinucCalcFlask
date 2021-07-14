@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="container box">
+    <h2>Random sequence dinuc calculation</h2>
+    <p>Rand seq length {{seqLength}} bp</p>
+    <p>GC percentage {{gcCalculation}} %</p>
+    <p>Random seq {{randSeq}}</p>
+</div>
+<br /><br />
+{% include "dinuctable.html" %}
+
+{% endblock content %}

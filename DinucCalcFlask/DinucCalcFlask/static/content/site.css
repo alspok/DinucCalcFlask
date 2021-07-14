@@ -1,42 +1,80 @@
-body {
+body{
     padding-top: 50px;
     padding-bottom: 20px;
 }
 
 /* Set padding to keep content from hitting the edges */
-.body-content {
+.body-content{
     padding-left: 15px;
     padding-right: 15px;
+}
+
+.paragraph{
+    font-size: 18px;
 }
 
 /* Set width on the form input elements since they're 100% wide by default */
 input,
 select,
-textarea {
+textarea{
     max-width: 280px;
 }
 
+table{
+    width: 100%;
+}
+
+.backgrnd {
+    background-color: #F6F6F6;
+}
+
+th,
+td{
+    border: 1px solid black;
+    text-align: center;
+    width: 60px;
+    height: 20px;
+}
+
+.btn-color{
+    color: gray;
+}
+
 /* styles for validation helpers */
-.field-validation-error {
+.field-validation-error{
     color: #b94a48;
 }
 
-.field-validation-valid {
+.field-validation-valid{
     display: none;
 }
 
-input.input-validation-error {
+input.input-validation-error{
     border: 1px solid #b94a48;
 }
 
-input[type="checkbox"].input-validation-error {
+input[type="checkbox"].input-validation-error{
     border: 0 none;
 }
 
-.validation-summary-errors {
+.validation-summary-errors{
     color: #b94a48;
 }
 
-.validation-summary-valid {
+.validation-summary-valid{
     display: none;
+}
+
+label{
+    font-size: 16px;
+    font-weight: normal !important;
+}
+
+input[type=text]{
+    border: 1px solid #ccc;
+    width: 100px;
+}
+
+.box{
+    overflow-wrap: break-word;
 }

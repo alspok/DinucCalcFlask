@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="container box">
+    <h2>Standart sequence dinuc calculation</h2>
+    <p>Seq length {{seqLength}} bp</p>
+    <p>GC percentage {{gcCalculation}} %</p>
+    <p>Seq {{listSeq}}</p>
+</div>
+<br />
+<br />
+{% include "dinuctable.html" %}
+
+{% endblock content %}
