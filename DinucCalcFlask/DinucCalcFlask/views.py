@@ -43,12 +43,6 @@ def about():
         message='Your application description page.'
     )
 
-
-
-@app.route('/seqinputgb')
-def seqinputgb():
-    return render_template('seqinputgb.html')
-
 #Console input seq dinuc calculation.
 @app.route('/seqinput')
 def seqinput():
@@ -140,3 +134,8 @@ def seqlistcalc():
         gcCalculation = round(gcCalculation.gcCount, 2),
         seqLength = len(listSeq),
         listSeq = listSeq)
+
+#Dinuc calculation of seq from GenBank.
+@app.route('/seqinputgb')
+def seqinputgb():
+    return render_template('seqinputgb.html')
