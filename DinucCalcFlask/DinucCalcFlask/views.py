@@ -2,7 +2,7 @@
 Routes and views for the flask application.
 """
 
-from flask import Flask, request, render_template
+from flask import Flask, request, render_template, redirect
 
 from datetime import datetime
 from flask import render_template, request
@@ -12,6 +12,7 @@ from DinucCalcFlask.DinucCalculation import DinucCalculation
 from DinucCalcFlask.RandomSeq import RandomSeq
 from DinucCalcFlask.GCCalculation import GCCalculation
 from DinucCalcFlask.SeqList import SeqList
+from DinucCalcFlask.GBEntrez import GBEntrez
 
 @app.route('/')
 @app.route('/home')
@@ -139,3 +140,13 @@ def seqlistcalc():
 @app.route('/seqinputgb')
 def seqinputgb():
     return render_template('seqinputgb.html')
+
+@app.route('/seqgbsearch', methods = ['post'])
+def seqgbsearch():
+    gbsearchkey = request.form['gbsearch']
+    gbentrez = GBEntrez(gbsearchkey)
+    gbresult = gbentrez.gbSearchResult()
+    #gbresult = "<br />".join(gbresult.split("\n"))
+
+    return render_template('gbentrez.html',
+        gbresult = gbresult)

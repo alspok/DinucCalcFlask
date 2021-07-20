@@ -32,6 +32,9 @@
     <Compile Include="DinucCalcFlask\DinucFrqTable.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="DinucCalcFlask\GBEntrez.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="DinucCalcFlask\GCCalculation.py">
       <SubType>Code</SubType>
     </Compile>
@@ -55,6 +58,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="DinucCalcFlask\templates\dinuctable.html" />
+    <Content Include="DinucCalcFlask\templates\gbentrez.html" />
     <Content Include="DinucCalcFlask\templates\seqfrqtable.html" />
     <Content Include="DinucCalcFlask\templates\seqinput.html" />
     <Content Include="DinucCalcFlask\templates\seqinputgb.html" />

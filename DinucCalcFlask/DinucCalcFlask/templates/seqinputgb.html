@@ -2,18 +2,21 @@
 
 {% block content %}
 
-    <p>In seq GB template</p>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h2>Sequence from GenBank</h2>
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <form action="{{ url_for('seqgbsearch')}}" method='post'>
+            <label>Search for id in GenBank: </label>
+            <input type="search" name="gbsearch" />
+            <input type="submit" value="Search" />
+        </form>
+    </div>
+</div>
 
 {% endblock %}
 
-<!DOCTYPE html>
-
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <meta charset="utf-8" />
-    <title>Seq GB</title>
-</head>
-<body>
-    <p>In seq GB template</p>
-</body>
-</html>
