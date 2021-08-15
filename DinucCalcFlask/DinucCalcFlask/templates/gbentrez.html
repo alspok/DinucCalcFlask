@@ -7,6 +7,11 @@
 </head>
 <body>
     In gbsearch.html<br />
-<span style="white-space: pre-line">{{gbresult}}</span>
+    <p style="white-space: pre-line">
+        {{gbrecord_description}}
+        {% for item in gbrecord_seq %}
+            {{item}}
+        {% endfor %}
+    </p>
 </body>
 </html>

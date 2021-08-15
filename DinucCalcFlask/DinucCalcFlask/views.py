@@ -1,6 +1,4 @@
-"""
-Routes and views for the flask application.
-"""
+"""Routes and views for the flask application."""
 
 from flask import Flask, request, render_template, redirect
 
@@ -11,6 +9,7 @@ from DinucCalcFlask.DinucFrqTable import DinucFrqTable
 from DinucCalcFlask.DinucCalculation import DinucCalculation
 from DinucCalcFlask.RandomSeq import RandomSeq
 from DinucCalcFlask.GCCalculation import GCCalculation
+from DinucCalcFlask.DinucData import DinucData
 from DinucCalcFlask.SeqList import SeqList
 from DinucCalcFlask.GBEntrez import GBEntrez
 
@@ -44,9 +43,10 @@ def about():
         message='Your application description page.'
     )
 
-#Console input seq dinuc calculation.
+
 @app.route('/seqinput')
 def seqinput():
+    """Console input seq dinuc calculation."""
     dinucFrqTable = DinucCalculation('no seq')
     return render_template(
         'seqinput.html',
@@ -75,9 +75,9 @@ def seqtextarea():
         showTable = True
         )
 
-#Random seq dinuc calculation.
 @app.route('/seqrandom')
 def seqrandom():
+    """Random seq dinuc calculation."""
     return render_template('seqrandom.html')
 
 @app.route('/makerandom', methods=['post'])
@@ -108,9 +108,10 @@ def seqrandommake():
             'seqrandom.html',
             inputError = False)
 
-#Dinuc calculation of seq from list
+#
 @app.route('/seqinputlist')
 def seqinputlist():
+    """Dinuc calculation of seq from list"""
     seqList = SeqList()
     return render_template(
         'seqinputlist.html',
@@ -124,6 +125,7 @@ def seqinputlist():
 
 @app.route('/seqlistcalc', methods=['post'])
 def seqlistcalc():
+    """ """
     listSeq = request.form.get('seq')
     gcCalculation = GCCalculation(listSeq)
     dinucFrqTables = DinucCalculation(listSeq)
@@ -136,17 +138,21 @@ def seqlistcalc():
         seqLength = len(listSeq),
         listSeq = listSeq)
 
-#Dinuc calculation of seq from GenBank.
 @app.route('/seqinputgb')
 def seqinputgb():
+    """Template to input """
     return render_template('seqinputgb.html')
 
 @app.route('/seqgbsearch', methods = ['post'])
 def seqgbsearch():
     gbsearchkey = request.form['gbsearch']
     gbentrez = GBEntrez(gbsearchkey)
-    gbresult = gbentrez.gbSearchResult()
+    gbrecord = gbentrez.gbSearchResult()
     #gbresult = "<br />".join(gbresult.split("\n"))
+    nucs = 60
+    gbrecord_seq = [str(gbrecord.seq[i:i+nucs].lower()) for i in range(0, len(str(gbrecord.seq)), nucs)]
 
     return render_template('gbentrez.html',
-        gbresult = gbresult)
+        gbrecord_id = gbrecord.id,
+        gbrecord_description = gbrecord.description,
+        gbrecord_seq = gbrecord_seq)

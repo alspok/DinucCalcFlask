@@ -29,6 +29,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="DinucCalcFlask\DinucCalculation.py" />
+    <Compile Include="DinucCalcFlask\DinucData.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="DinucCalcFlask\DinucFrqTable.py">
       <SubType>Code</SubType>
     </Compile>
