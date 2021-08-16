@@ -1,17 +1,24 @@
-<!DOCTYPE html>
+{% extends "layout.html" %}
 
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <meta charset="utf-8" />
-    <title></title>
-</head>
-<body>
-    In gbsearch.html<br />
-    <p style="white-space: pre-line">
-        {{gbrecord_description}}
+{% block content %}
+
+<div class="container box">
+    <div class="row">
+        <div class="col-md-12">
+            <h2>Dinuc frq table</h2>
+            <br />
+        </div>
+    </div>
+
+    <h3>Sequence from GeneBank</h3>
+    <h4>{{gbrecord_description}}</h4>
+    <p style="font-family: 'Courier New'; font-size: 16px">
         {% for item in gbrecord_seq %}
-            {{item}}
+        {{item}}
         {% endfor %}
     </p>
-</body>
-</html>
+</div>
+<br />
+{% include "dinuctable.html" %}
+
+{% endblock content%}

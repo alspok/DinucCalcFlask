@@ -21,7 +21,7 @@ class DinucData():
                                                                             ['tt', 0, 0, 0, 0, 0]]
         self.seq: str = (seq + seq[0]).lower()
         self.dinuc_frq_diff_sum: float = 0
-        
+        self.dinucTableComplete()
 
     def dinucCalc(self):
         """dinuc count in two frames"""

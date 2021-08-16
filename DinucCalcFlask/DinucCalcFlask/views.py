@@ -149,10 +149,18 @@ def seqgbsearch():
     gbentrez = GBEntrez(gbsearchkey)
     gbrecord = gbentrez.gbSearchResult()
     #gbresult = "<br />".join(gbresult.split("\n"))
-    nucs = 60
+    nucs = 100
     gbrecord_seq = [str(gbrecord.seq[i:i+nucs].lower()) for i in range(0, len(str(gbrecord.seq)), nucs)]
+    
+    dinucData = DinucData(gbrecord.seq)
+    #dinucData.dinucTableComplete()
+    dinucFrqTables = dinucData.dinuc_table
+    dinucFrqDiffSum = dinucData.dinuc_frq_diff_sum
 
     return render_template('gbentrez.html',
         gbrecord_id = gbrecord.id,
         gbrecord_description = gbrecord.description,
-        gbrecord_seq = gbrecord_seq)
+        gbrecord_seq = gbrecord_seq,
+        dinucTableLength = len(dinucData.dinuc_table),
+        dinucFrqTables = dinucFrqTables,
+        dinucFrqDiffSum = dinucFrqDiffSum)
