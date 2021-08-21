@@ -14,10 +14,20 @@ body{
 }
 
 /* Set width on the form input elements since they're 100% wide by default */
-input,
 select,
 textarea{
     max-width: 280px;
+}
+
+input[type=search]{
+    border: thin solid black;
+    border-radius: 4px;
+    width: 240px;
+}
+
+input[type=submit]{
+    border: thin solid black;
+    border-radius: 4px;
 }
 
 table{

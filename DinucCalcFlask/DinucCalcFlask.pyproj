@@ -47,6 +47,9 @@
     <Compile Include="DinucCalcFlask\SeqList.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="DinucCalcFlask\static\helpers\GBSeq.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="runserver.py" />
     <Compile Include="DinucCalcFlask\__init__.py" />
     <Compile Include="DinucCalcFlask\views.py" />
@@ -56,6 +59,7 @@
     <Folder Include="DinucCalcFlask\static\" />
     <Folder Include="DinucCalcFlask\static\content\" />
     <Folder Include="DinucCalcFlask\static\fonts\" />
+    <Folder Include="DinucCalcFlask\static\helpers\" />
     <Folder Include="DinucCalcFlask\static\scripts\" />
     <Folder Include="DinucCalcFlask\templates\" />
   </ItemGroup>

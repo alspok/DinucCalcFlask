@@ -11,10 +11,14 @@
     <br />
     <div class="row">
         <form action="{{ url_for('seqgbsearch')}}" method='post'>
-            <label>Search for id in GenBank: </label>
-            <input type="search" name="gbsearch" />
+            <label>Search seq in GeneBank by id: </label>
+            <input type="search" name="gbsearchid" placeholder="NC_04528, 120289, etc."/>
             <input type="submit" value="Search" />
-        </form>
+            <br /><br />
+            <label> Searech seq in GeneBank by term: </label>
+            <input type="search" name="gbsearcterm" placeholder="Escherichia coli, etc." />
+            <input type="submit" value="Search" />
+         </form>
     </div>
 </div>
 
